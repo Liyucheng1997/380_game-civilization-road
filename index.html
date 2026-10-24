@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>文明之路</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 56 18v28L32 60 8 46V18z' fill='%230071e3'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700'%3E文%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="css/tokens.css?v=1" />
+    <link rel="stylesheet" href="css/game.css?v=1" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="map"></canvas>
+
+      <header id="topbar" class="hud card">
+        <div class="tb-civ">
+          <span id="tb-mark"></span>
+          <div><div class="tb-name" id="tb-name"></div><div class="tb-sub" id="tb-sub"></div></div>
+        </div>
+        <div class="tb-stats">
+          <div class="stat" id="st-sci" title="每回合科技"></div>
+          <div class="stat" id="st-cul" title="每回合文化"></div>
+          <div class="stat" id="st-gold" title="金币（每回合收入）"></div>
+        </div>
+        <button class="tb-prog" id="tb-tech" title="科技树（T）"></button>
+        <button class="tb-prog" id="tb-civic" title="市政树（C）"></button>
+        <div class="tb-right">
+          <div class="tb-turn" id="tb-turn"></div>
+          <button class="tb-round" id="btn-diplo" title="外交"></button>
+          <button class="tb-round" id="btn-help" title="游戏说明"></button>
+          <button class="tb-round" id="btn-menu" title="菜单"></button>
+        </div>
+      </header>
+
+      <aside id="notes"></aside>
+      <section id="unit-panel" class="hud card hidden"></section>
+      <section id="city-panel" class="hud card hidden"></section>
+
+      <div id="turn-box" class="hud">
+        <div class="map-tools">
+          <button class="tb-round" id="tool-yields" title="显示地块产出（Y）"></button>
+          <button class="tb-round" id="tool-grid" title="显示网格（G）"></button>
+          <button class="tb-round" id="tool-home" title="回到首都（H）"></button>
+        </div>
+        <div id="mini-wrap"><canvas id="minimap"></canvas></div>
+        <button id="end-turn"></button>
+      </div>
+
+      <div id="tooltip" class="hidden"></div>
+      <div id="busy" class="hidden"><div class="spinner"></div><span>其他文明行动中…</span></div>
+      <div id="toast-host" class="toast-host"></div>
+      <div id="modal-root"></div>
+      <div id="start-screen" class="hidden"></div>
+    </div>
+
+    <script src="js/data.js?v=1"></script>
+    <script src="js/util.js?v=1"></script>
+    <script src="js/mapgen.js?v=1"></script>
+    <script src="js/game.js?v=1"></script>
+    <script src="js/path.js?v=1"></script>
+    <script src="js/ai.js?v=1"></script>
+    <script src="js/render.js?v=1"></script>
+    <script src="js/ui.js?v=1"></script>
+    <script>
+      Civ.UI.init();
+    </script>
+  </body>
+</html>
